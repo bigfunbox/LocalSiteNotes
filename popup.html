@@ -11,6 +11,8 @@
     crossorigin="anonymous">
   <style>
     body {
+      min-width: 300px;
+      min-height: 600px;
       font-family: 'Roboto', sans-serif;
       font-size: 14pt;
     }
@@ -45,6 +47,12 @@
     .modal-icons div {
       flex-grow: 2;
     }
+    #container-url {
+      display: flex;
+      flex-direction: row;
+      align-items:center;
+    }
+    #container-url input { min-width: 50%; }
   </style>
   <script src="popup.js"></script>
 </head>
@@ -91,10 +99,12 @@
     </div>
     <div class="modal-body">
       <form action="#" method="post">
-        <input type="text" name="todo_title" id="todo_title" class="input" placeholder="Title">
-        <input type="text" name="todo_detail" id="todo_detail" class="input" placeholder="Detail">
-        <input type="text" name="todo_url" id="todo_url" class="input" placeholder="url">
-        <button type="submit" id="todo_save">Save New</button>
+        <div><input type="text" name="todo_title" id="todo_title" class="input" placeholder="Title"></div>
+        <div><textarea name="todo_detail" id="todo_detail" class="input" placeholder="Detail"></textarea></div>
+        <div id="container-url"><input type="text" name="todo_url" id="todo_url" class="input" placeholder="url">
+          <button type="button" id="btn_use" name="btn_use">Use Tab</button>
+        </div>
+        <div><button type="submit" id="todo_save">Save New</button></div>
       </form>
     </div>
 
