@@ -12,6 +12,5 @@ var background = {
     });
   }
 };
-
 // startup
 background.init();

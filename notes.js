@@ -17,9 +17,9 @@ function Note(title, detail, url, task, status, pageNum) {
 function saveNote(e) {
   e.preventDefault();
   vNote = new Note(
-    document.getElementById("todo_title").value,
-    document.getElementById("todo_detail").value,
-    document.getElementById("todo_url").value,
+    document.getElementById("title").value,
+    document.getElementById("detail").value,
+    document.getElementById("url").value,
     false,
     "n/a",
     "1"
@@ -72,24 +72,21 @@ function fetchNotes() {
       ')">x</button></div></div>';
   }
 }
-
 // remove note
 function deleteNote(url, pageNum) {
   // get all notes
   var bfb_notes = JSON.parse(localStorage.getItem("bfb_notes"));
   // check notes to see if this is the one we want to delete.
-
   for (var note = 0; note < bfb_notes.length; note++) {
     // remove from the array if the url is the same.
     if (bfb_notes[note].url === url && bfb_notes[note].pageNum === pageNum) {
       bfb_notes.splice(note, 1);
     }
   }
-  // loop over the additional notes that have this url to reset their numbers
+  // reset page numbers for the notes for this url
   count = 0;
   for (var note = 0; note < bfb_notes.length; note++) {
     // update number for this note
-
     if (bfb_notes[note].url === url) {
       count++;
       bfb_notes[note].pageNum = count;
