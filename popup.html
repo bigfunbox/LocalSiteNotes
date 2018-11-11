@@ -53,6 +53,56 @@
       align-items:center;
     }
     #container-url input { min-width: 50%; }
+
+
+
+article.item {
+      display: grid;
+      border-top: 1px solid #c0c0c0;
+    }
+
+    article.item h3 {
+      font-size: 1rem;
+      grid-row: row 1;
+      grid-column: span 2 / auto;
+    }
+
+    article.item h3, article.item ul  {
+      margin: 0;
+    }
+
+    article.item ul li {
+      display: inline;
+    }
+
+    div.icon-container {
+      grid-row: row 1;
+      align-self: center;
+      justify-self: end;
+
+    }
+
+    div.detail-container {
+      font-size: .9rem;
+      grid-row: row 2;
+      grid-column: span 3;
+      padding: .125rem;
+      border: 1px dashed rgba(161, 161, 161, .5);
+    }
+
+    div.detail-container {
+      display: none;
+    }
+
+    .icon {
+      cursor: pointer;
+    }
+    .even { background-color: rgb(249, 250, 230); }
+    .far, .fas { font-size: 12px; padding: 0 1px;}
+    /* #result-container {
+      display: grid;
+      grid-template-rows: 4fr 1fr 1fr;
+    } */
   </style>
   <script src="popup.js"></script>
 </head>
@@ -60,7 +110,7 @@
 <body>
   <div class="container">
     <div class="modal-header">
-      <svg width="64" height="64" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      <svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;">
         <g id="Layer-4" serif:id="Layer 4" transform="matrix(0.826849,0,0,0.841898,-178.566,-44.7417)">
           <g transform="matrix(23.9758,10.7607,11.8273,-21.8137,221.733,56.9757)">
@@ -90,32 +140,26 @@
           <image id="_Image3" width="16px" height="22px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABrElEQVQ4jZ2SP2hUQRDGf3vzzXukyJUB4ZCAFnYhrSmCh4Kg2FoIWgQM1oHDQhCMphCbHARJSGEh2BrSCRGERBBEDYgQrERRCFgoHKIknoX3zL57z/uTD5aFnZ3ffjOzVptubFbHp35Wx6d2vn/Y2mdIhdp04xtQBb4A94HlT8/u7g4D+AwcAQghYNIvuT8yqbmzfuPVIID3wHGTMAnFu/umpEWTHr94cG2vFHD01PU3Jk1kieaeh/xdH+W+ZGarG81LX3OAY2dvbpnZSbnnHbhjZt3AHyY9NKm5Nn/+LUA4ceHOE0lnItvFUmLowdlTSYtKkqQVv1Jw0Q05iNVNqsvTtJUFsoRSB+W9QUkHUDKBnqVUKhUA5EnSGsBurqGR2vI0bZXaLU6A0Hk11r8mmlnBRezmP2rL0/S5pF2TxsomEELo/ZUBLi5sjJp7Q9KcSSOSqJj1TOzodw4/s/SyZtJ8COFKBu+j/dJLsyvbk8A9oN4PUGwrsHx14jVwGjgHvOsBaPe1ObuyLWAGuAWMdYX3BqkzA40CDWAOGBkaEIFqwG3g8qEAEWgSWPgDLuha+yjkktYAAAAASUVORK5CYII=" />
         </defs>
       </svg>
-      <h1>BigFunBox Solutions: Task Manager</h1>
+      <h1>BigFunBox Solutions: Site Notes</h1>
     </div>
-    <div class="modal-icons">
-      <div><a href="https://www.bigfunbox.com"><i class="fa fa-globe"></i></a></div>
-      <div><a href="https://www.facebook.com/bigfunboxsolutions/"><i class="fab fa-facebook-f"></i></a></div>
-      <div><a href="https://www.linkedin.com/bigfunboxsolutions"><i class="fab fa-linkedin"></i></a></div>
-    </div>
-    <div class="modal-body">
-      <form action="#" method="post">
-        <div><input type="text" name="todo_title" id="todo_title" class="input" placeholder="Title"></div>
-        <div><textarea name="todo_detail" id="todo_detail" class="input" placeholder="Detail"></textarea></div>
-        <div id="container-url"><input type="text" name="todo_url" id="todo_url" class="input" placeholder="url">
+    <section class="modal-icons">
+      <div><a href="https://www.bigfunbox.com" target="_blank"><i class="fa fa-globe"></i></a></div>
+      <div><a href="https://www.facebook.com/bigfunbox/" target="_blank"><i class="fab fa-facebook-f"></i></a></div>
+      <div><a href="https://www.linkedin.com/company/bigfunbox-solutions/" target="_blank"><i class="fab fa-linkedin"></i></a></div>
+    </section>
+    <section class="form-container">
+      <form id="noteForm" name="noteForm" action="#" method="post">
+        <div><input type="text" name="title" id="title" class="input" placeholder="Title"></div>
+        <div><textarea name="detail" id="detail" class="input" placeholder="Detail"></textarea></div>
+        <div id="container-url"><input type="text" name="url" id="url" class="input" placeholder="url">
           <button type="button" id="btn_use" name="btn_use">Use Tab</button>
         </div>
-        <div><button type="submit" id="todo_save">Save New</button></div>
+        <div><button type="submit" id="save">Save New</button></div>
       </form>
-    </div>
-
-    <div id="projects">
-      List Projects Here
-    </div>
-    <div id="project_tasks">
-      <ul>
-        <li>Task 1</li>
-      </ul>
-    </div>
+    </section>
+    <section id="result-container">
+      <div class="notice">Loading...</div>
+    </section>
   </div>
 </body>
 
