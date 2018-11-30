@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "BigFunBox EZ Site Notes",
+  "name": "BigFunBox Local Site Notes",
   "description": "This extension will allow you to create local notes for sites you build or visit and access BigFunBox Solutions Media.",
   "version": "1.0.0",
 

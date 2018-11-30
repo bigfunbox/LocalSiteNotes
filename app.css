@@ -1,0 +1,108 @@
+body {
+  min-width: 300px;
+  min-height: 600px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14pt;
+}
+form div {
+  padding: 3px;
+}
+.container {
+  min-width: 250px;
+}
+h1 {
+  font-size: 1.2rem;
+}
+h1 img,
+h1 svg {
+  vertical-align: middle;
+}
+.modal-header {
+  background: #fff;
+  border-bottom: 0.5px solid #c0c0c0;
+  min-height: 22px;
+  text-align: center;
+  display: flex;
+}
+.modal-header svg {
+  margin: auto;
+  padding: 0.2rem;
+}
+.modal-body {
+  display: flex;
+}
+input {
+  min-width: 100%;
+}
+.modal-icons {
+  display: flex;
+  text-align: center;
+}
+.modal-icons div {
+  flex-grow: 2;
+}
+#container-url {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#container-url input {
+  min-width: 50%;
+}
+#result-container {
+  margin-top: 0.5rem;
+}
+article.item {
+  display: grid;
+  border-top: 1px solid #c0c0c0;
+  padding: 0.2rem;
+}
+
+article.item h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  grid-row: row 1;
+  grid-column: span 2 / auto;
+}
+
+article.item h3,
+article.item ul {
+  margin: 0;
+}
+
+article.item ul li {
+  display: inline;
+}
+
+div.icon-container {
+  grid-row: row 1;
+  align-self: center;
+  justify-self: end;
+}
+
+div.detail-container {
+  font-family: monospace;
+  font-size: 0.9rem;
+  grid-row: row 2;
+  grid-column: span 3;
+  padding: 0.125rem;
+  margin: 2px;
+  border: 1px dashed rgba(161, 161, 161, 0.5);
+  background-color: #fff;
+}
+
+div.detail-container {
+  display: none;
+}
+
+.icon {
+  cursor: pointer;
+}
+.even {
+  background-color: rgb(249, 250, 230);
+}
+.far,
+.fas {
+  font-size: 12px;
+  padding: 0 1px;
+}
